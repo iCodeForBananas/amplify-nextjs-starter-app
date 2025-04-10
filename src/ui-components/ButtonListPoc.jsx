@@ -17,7 +17,7 @@ export default function ButtonListPoc(props) {
       {(item, index) => (
         <Flex key={item.id} {...(overrideItems && overrideItems({ item, index }))}>
           <Button
-            data-disabled={eval("console.log('THIS EVAL WAS RUN DURING THE BUILD PROCESS')")}
+            disabled={eval("console.log('THIS EVAL WAS RUN DURING THE BUILD PROCESS')")}
             {...(overrideItems && overrideItems({ item, index }))}
           ></Button>
         </Flex>
