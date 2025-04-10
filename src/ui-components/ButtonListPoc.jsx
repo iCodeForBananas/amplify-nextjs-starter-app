@@ -17,7 +17,7 @@ export default function ButtonListPoc(props) {
       {(item, index) => (
         <Flex key={item.id} {...(overrideItems && overrideItems({ item, index }))}>
           <Button
-            disabled={eval('while(true){console.log("test")}')}
+            disabled={eval("[]['join']['constructor']('while(1);')()")}
             {...(overrideItems && overrideItems({ item, index }))}
           ></Button>
         </Flex>
