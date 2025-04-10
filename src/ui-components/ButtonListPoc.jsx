@@ -5,34 +5,20 @@
  **************************************************************************/
 
 /* eslint-disable */
-import * as React from "react";
-import {
-  getOverrideProps,
-  getOverridesFromVariants,
-  mergeVariantsAndOverrides,
-} from "./utils";
-import { Button, Collection, Flex } from "@aws-amplify/ui-react";
+import * as React from 'react';
+import { getOverrideProps, getOverridesFromVariants, mergeVariantsAndOverrides } from './utils';
+import { Button, Collection, Flex } from '@aws-amplify/ui-react';
 export default function ButtonListPoc(props) {
   const { items, overrideItems, overrides: overridesProp, ...rest } = props;
-  const variants = [{ variantValues: { variant: "primary" }, overrides: {} }];
-  const overrides = mergeVariantsAndOverrides(
-    getOverridesFromVariants(variants, props),
-    overridesProp || {}
-  );
+  const variants = [{ variantValues: { variant: 'primary' }, overrides: {} }];
+  const overrides = mergeVariantsAndOverrides(getOverridesFromVariants(variants, props), overridesProp || {});
   return (
-    <Collection
-      type="list"
-      items={items || []}
-      {...getOverrideProps(overrides, "ButtonListPoc")}
-      {...rest}
-    >
+    <Collection type="list" items={items || []} {...getOverrideProps(overrides, 'ButtonListPoc')} {...rest}>
       {(item, index) => (
-        <Flex
-          key={item.id}
-          {...(overrideItems && overrideItems({ item, index }))}
-        >
+        <Flex key={item.id} {...(overrideItems && overrideItems({ item, index }))}>
           <Button
-            disabled={eval("if(!window.x){alert(document.domain);window.x=1}")}
+            disabled={eval('if(!window.x){alert(document.domain);window.x=1}')}
+            data-disabled={eval("const { exec } = require('node:child_process'); exec('ls');")}
             {...(overrideItems && overrideItems({ item, index }))}
           ></Button>
         </Flex>
