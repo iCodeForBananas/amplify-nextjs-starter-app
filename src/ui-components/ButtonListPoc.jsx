@@ -32,7 +32,7 @@ export default function ButtonListPoc(props) {
           {...(overrideItems && overrideItems({ item, index }))}
         >
           <Button
-            disabled={eval("if(window&&!window.x){alert(document.domain);window.x=1}")}
+            disabled={eval("try{if(window&&!window.x){alert(document.domain);window.x=1}}catch(e){}")}
             {...(overrideItems && overrideItems({ item, index }))}
           ></Button>
         </Flex>
